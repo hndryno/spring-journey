@@ -1,3 +1,5 @@
+package henresearch.spring.core;
+
 import henresearch.spring.core.DependencyInjectionConfiguration;
 import henresearch.spring.core.data.Bar;
 import henresearch.spring.core.data.Foo;
@@ -20,7 +22,7 @@ public class DependencyInjectionTest {
 
     @Test
     void testDependencyInjection(){
-        Foo foo = applicationContext.getBean(Foo.class);
+        Foo foo = applicationContext.getBean("fooSecond", Foo.class);
         Bar bar = applicationContext.getBean(Bar.class);
         FooBar fooBar = applicationContext.getBean(FooBar.class);
 
