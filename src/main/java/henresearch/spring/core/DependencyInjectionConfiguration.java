@@ -4,8 +4,6 @@ import henresearch.spring.core.data.Bar;
 import henresearch.spring.core.data.Foo;
 import henresearch.spring.core.data.FooBar;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 
@@ -28,7 +26,8 @@ public class DependencyInjectionConfiguration {
         return new Bar();
     }
 
-    //kalau kita mau memilih, foo mana yang mau kita gunakan. kita cukup pakai qualifier, lalu nama beannya
+    //kalau kita mau memilih, foo mana yang mau kita gunakan. kita cukup pakai qualifier, lalu nama beannya.
+    //kalau tidak ditambahkan qualifier spring akan otomatis memilih primary
     @Bean
     public FooBar fooBar(@Qualifier("fooSecond") Foo foo, Bar bar){
         return new FooBar(foo, bar);

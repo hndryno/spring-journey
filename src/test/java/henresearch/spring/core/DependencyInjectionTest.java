@@ -1,6 +1,5 @@
 package henresearch.spring.core;
 
-import henresearch.spring.core.DependencyInjectionConfiguration;
 import henresearch.spring.core.data.Bar;
 import henresearch.spring.core.data.Foo;
 import henresearch.spring.core.data.FooBar;
