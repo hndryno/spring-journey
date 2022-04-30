@@ -1,6 +1,7 @@
 package henresearch.spring.core;
 
 import henresearch.spring.core.data.Connection;
+import henresearch.spring.core.data.Server;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,13 +24,18 @@ public class LifeCycleTest {
         applicationContext.registerShutdownHook(); //ini sama saja dengan applicationContext.close()
     }
 
-    @AfterEach
-    void tearDown() {
-//        applicationContext.close();
-    }
+//    @AfterEach
+//    void tearDown() {
+////        applicationContext.close();
+//    }
 
     @Test
     void testConnection() {
         Connection connec = applicationContext.getBean(Connection.class);
+    }
+
+    @Test
+    void testServer(){
+        Server server = applicationContext.getBean(Server.class);
     }
 }
