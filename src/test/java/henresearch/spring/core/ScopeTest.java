@@ -1,5 +1,6 @@
 package henresearch.spring.core;
 
+import henresearch.spring.core.data.Bar;
 import henresearch.spring.core.data.Foo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,6 +31,19 @@ public class ScopeTest {
 
         Assertions.assertNotSame(foo2, foo3);
 
+    }
+
+    @Test
+    void testDoubletonScope(){
+        Bar bar1 = applicationContext.getBean(Bar.class);
+        Bar bar2 = applicationContext.getBean(Bar.class);
+        Bar bar3 = applicationContext.getBean(Bar.class);
+        Bar bar4 = applicationContext.getBean(Bar.class);
+
+        Assertions.assertSame(bar1, bar3);
+        Assertions.assertSame(bar4, bar2);
+        Assertions.assertNotSame(bar1, bar2);
+        Assertions.assertNotSame(bar2, bar3);
 
     }
 }
