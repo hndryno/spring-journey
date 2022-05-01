@@ -1,4 +1,4 @@
-package henresearch.spring.core;
+package henresearch.spring.core.configuration;
 
 import henresearch.spring.core.data.Bar;
 import org.springframework.context.annotation.Bean;
