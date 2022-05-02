@@ -1,5 +1,6 @@
 package henresearch.spring.core;
 
+import henresearch.spring.core.repository.ProductRepository;
 import henresearch.spring.core.service.ProductService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,4 +24,12 @@ public class ComponentTest {
 
         Assertions.assertSame(pro1, pro2);
     }
+
+    @Test
+    void testConstructorDependencyInjection(){
+        ProductRepository productRepository = applicationContext.getBean(ProductRepository.class);
+        ProductService productService = applicationContext.getBean(ProductService.class);
+        Assertions.assertSame(productRepository, productService.getProductRepository());
+    }
+
 }
