@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = {
+        "henresearch.spring.core.configuration",
         "henresearch.spring.core.repository",
         "henresearch.spring.core.service",
 })
