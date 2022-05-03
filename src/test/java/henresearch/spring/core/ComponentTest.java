@@ -1,5 +1,6 @@
 package henresearch.spring.core;
 
+import henresearch.spring.core.data.MultiFoo;
 import henresearch.spring.core.repository.CategoryRepository;
 import henresearch.spring.core.repository.CustomerRepository;
 import henresearch.spring.core.repository.ProductRepository;
@@ -55,5 +56,10 @@ public class ComponentTest {
         Assertions.assertSame(customerService.getNormalCustomerRepository(), normalCustomerRepository);
         Assertions.assertSame(customerService.getPremiumCustomerRepository(), premiumCustomerRepository);
 
+    }
+
+    void testObjectProvider(){
+        MultiFoo multiFoo = applicationContext.getBean(MultiFoo.class);
+        Assertions.assertEquals(3, multiFoo.getFoos().size());
     }
 }
